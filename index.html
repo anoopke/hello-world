@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market Event Watcher</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Market Insights</p>
+      <h1>Market Event Watcher</h1>
+      <p class="subtitle">Search upcoming market events and set alerts for the ones that move your portfolio.</p>
+    </div>
+    <div class="hero-card">
+      <h2>Today at a glance</h2>
+      <ul>
+        <li><strong>12</strong> events tracked</li>
+        <li><strong>4</strong> alerts active</li>
+        <li><strong>6</strong> symbols monitored</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Search market events</h2>
+      <form id="search-form" class="search-form">
+        <label>
+          Keyword or symbol
+          <input type="text" id="keyword" placeholder="e.g. earnings, AAPL" />
+        </label>
+        <label>
+          Category
+          <select id="category">
+            <option value="all">All events</option>
+            <option value="earnings">Earnings</option>
+            <option value="macro">Macro</option>
+            <option value="guidance">Guidance</option>
+            <option value="dividend">Dividends</option>
+          </select>
+        </label>
+        <label>
+          Date range
+          <select id="date-range">
+            <option value="7">Next 7 days</option>
+            <option value="30">Next 30 days</option>
+            <option value="90">Next 90 days</option>
+          </select>
+        </label>
+        <button type="submit">Search events</button>
+      </form>
+
+      <div class="results-header">
+        <h3>Results</h3>
+        <span id="results-count">0</span>
+      </div>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Create an alert</h2>
+      <form id="alert-form" class="alert-form">
+        <label>
+          Symbol
+          <input type="text" id="alert-symbol" placeholder="e.g. TSLA" required />
+        </label>
+        <label>
+          Event type
+          <select id="alert-type">
+            <option value="earnings">Earnings</option>
+            <option value="macro">Macro</option>
+            <option value="guidance">Guidance</option>
+            <option value="dividend">Dividend</option>
+          </select>
+        </label>
+        <label>
+          Notify me
+          <select id="alert-window">
+            <option value="1">1 day before</option>
+            <option value="3">3 days before</option>
+            <option value="7">1 week before</option>
+          </select>
+        </label>
+        <button type="submit">Add alert</button>
+      </form>
+
+      <div class="results-header">
+        <h3>Active alerts</h3>
+        <span id="alert-count">0</span>
+      </div>
+      <div id="alerts" class="alerts"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Market Event Watcher is a demo app. Connect it to your data provider to go live.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
